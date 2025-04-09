@@ -43,6 +43,11 @@ class block_fhgr_code_server extends block_base {
             return $this->content;
         }
 
+        if ($this->page->pagetype !== 'mod-quiz-attempt') {
+            $this->content->text = get_string('duringattempt', 'block_fhgr_code_server');
+            return $this->content;
+        }
+
         $userid = $USER->id;
         $fullname = fullname($USER);
 
