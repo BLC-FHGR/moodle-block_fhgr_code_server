@@ -1,0 +1,7 @@
+# Ignore typical Moodle files that shouldn't be in version control
+*.log
+.DS_Store
+*.swp
+.idea/
+.vscode/
+vendor/
