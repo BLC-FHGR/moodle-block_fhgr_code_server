@@ -26,5 +26,5 @@ $string['pluginname'] = 'FHGR Code Server';
 $string['fhgr_code_server'] = 'FHGR Code Server';
 $string['fhgr_code_server:addinstance'] = 'Add a new FHGR Code Server block';
 $string['key'] = 'Access key';
-$string['enterkey'] = 'configure block and enter access key:';
+$string['enterkey'] = 'configure block and enter access key';
 $string['duringattempt'] = 'The link is only available during an active quiz attempt.';
