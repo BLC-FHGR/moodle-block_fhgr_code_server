@@ -39,7 +39,7 @@ class block_fhgr_code_server extends block_base {
         $key = isset($this->config->key) ? $this->config->key : null;
 
         if (!$key) {
-            $this->content->text = get_string('enterkey', 'block_fhgr_code_server');
+            $this->content->text = get_string('enterkey', 'block_fhgr_code_server') . "\n" . get_string('availabilitynotice', 'block_fhgr_code_server');
             return $this->content;
         }
 
