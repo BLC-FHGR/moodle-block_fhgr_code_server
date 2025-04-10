@@ -57,7 +57,13 @@ class block_fhgr_code_server extends block_base {
         }
 
         $username = $USER->username;
-        $url = "https://python.fhgr.ch/dispatch/create?t=e&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
+        $mode = $this->config->mode ?? 'exam';
+        //$mode = isset($this->config->mode) ? $this->config->mode : null;
+        if ($mode === 'exam') {
+            $url = "https://python.fhgr.ch/dispatch/create?t=e&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
+        } else if ($mode === 'mockexam_coding') {
+            $url = "https://python.fhgr.ch/dispatch/create?t=c&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
+        }
 
         $this->content->text = html_writer::link($url, "Open Code Server", ['target' => '_blank']);
         return $this->content;

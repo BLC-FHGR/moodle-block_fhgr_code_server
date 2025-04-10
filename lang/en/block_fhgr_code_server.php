@@ -29,3 +29,6 @@ $string['key'] = 'Access key';
 $string['enterkey'] = 'Configure Block and enter \'Access key\'.';
 $string['duringattempt'] = 'The link is only available during an active quiz attempt.';
 $string['availabilitynotice'] = 'This Block needs to be available during \'Attempt Quiz\' page or \'Any quiz module page\'.';
+$string['mode'] = 'Mode';
+$string['mode_exam'] = 'Exam';
+$string['mode_mockexam_coding'] = 'Mock Exam / Coding practice';

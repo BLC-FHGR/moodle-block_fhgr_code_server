@@ -28,5 +28,11 @@ class block_fhgr_code_server_edit_form extends block_edit_form {
     protected function specific_definition($mform) {
         $mform->addElement('text', 'config_key', get_string('key', 'block_fhgr_code_server'));
         $mform->setType('config_key', PARAM_TEXT);
+        //setting to choose between exam and coding instance
+        $mform->addElement('select', 'config_mode', get_string('mode', 'block_fhgr_code_server'), [
+            'exam' => get_string('mode_exam', 'block_fhgr_code_server'),
+            'mockexam_coding' => get_string('mode_mockexam_coding', 'block_fhgr_code_server')
+        ]);
+        $mform->setDefault('config_mode', 'exam');
     }
 }
