@@ -38,13 +38,26 @@ class block_fhgr_code_server extends block_base {
         $this->content = new stdClass();
         $key = isset($this->config->key) ? $this->config->key : null;
 
+        $additionaltext;
+        if (has_capability('moodle/course:update', $this->context)) {
+            // Only lecturers (editing teachers, managers, etc.) will see this
+            $mode = $this->config->mode ?? 'exam';
+            if ($mode === 'exam') {
+                $additionaltext = "<p><br>" . get_string('mode_exam', 'block_fhgr_code_server') . " " . get_string('mode', 'block_fhgr_code_server');
+            }
+            else if ($mode === 'mockexam_coding')
+            {
+                $additionaltext = "<p><br>" . get_string('mode_mockexam_coding', 'block_fhgr_code_server') . " " . get_string('mode', 'block_fhgr_code_server');
+            }
+        }
+
         if (!$key) {
-            $this->content->text = get_string('enterkey', 'block_fhgr_code_server') . "\n" . get_string('availabilitynotice', 'block_fhgr_code_server');
+            $this->content->text = get_string('enterkey', 'block_fhgr_code_server') . "\n" . get_string('availabilitynotice', 'block_fhgr_code_server') . $additionaltext;
             return $this->content;
         }
 
         if ($this->page->pagetype !== 'mod-quiz-attempt') {
-            $this->content->text = get_string('duringattempt', 'block_fhgr_code_server');
+            $this->content->text = get_string('duringattempt', 'block_fhgr_code_server') . $additionaltext;
             return $this->content;
         }
 
@@ -58,14 +71,13 @@ class block_fhgr_code_server extends block_base {
 
         $username = $USER->username;
         $mode = $this->config->mode ?? 'exam';
-        //$mode = isset($this->config->mode) ? $this->config->mode : null;
         if ($mode === 'exam') {
             $url = "https://python.fhgr.ch/dispatch/create?t=e&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
         } else if ($mode === 'mockexam_coding') {
             $url = "https://python.fhgr.ch/dispatch/create?t=c&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
         }
 
-        $this->content->text = html_writer::link($url, "Open Code Server", ['target' => '_blank']);
+        $this->content->text = html_writer::link($url, "Open Code Server", ['target' => '_blank']) . $additionaltext;
         return $this->content;
     }
 
