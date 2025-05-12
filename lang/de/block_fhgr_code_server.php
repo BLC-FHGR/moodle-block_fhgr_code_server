@@ -35,3 +35,4 @@ $string['mode_exam'] = 'Prüfung';
 $string['mode_mockexam_coding'] = 'Probeprüfung / Übung';
 $string['mode_help'] = 'Wähle aus, ob dieser Block in einem Prüfungs- oder Übungskontext verwendet wird. Dies beeinflusst, wie der Code Server gestartet wird. Es ist wichtig, den richtigen Modus zu wählen!';
 $string['notice_maximum_users'] = 'Dieser Code Server ist für die gleichzeitige Nutzung durch bis zu 50 Studierende ausgelegt. Bei grösseren Gruppen kann die Leistung beeinträchtigt werden.';
+$string['open_code_server'] = 'Code Server öffnen';

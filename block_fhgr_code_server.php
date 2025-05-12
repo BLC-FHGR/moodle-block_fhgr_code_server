@@ -78,7 +78,7 @@ class block_fhgr_code_server extends block_base {
             $url = "https://python.fhgr.ch/dispatch/create?t=c&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
         }
 
-        $this->content->text = html_writer::link($url, "Open Code Server", ['target' => '_blank']) . $additionaltext;
+        $this->content->text = html_writer::link($url, get_string('open_code_server', 'block_fhgr_code_server'), ['target' => '_blank']) . $additionaltext;
         return $this->content;
     }
 
