@@ -34,3 +34,4 @@ $string['mode'] = 'Mode';
 $string['mode_exam'] = 'Exam';
 $string['mode_mockexam_coding'] = 'Mock Exam / Coding practice';
 $string['mode_help'] = 'Choose whether this block is used in an exam or mock exam / practice context. This changes how the Code Server is launched. It is important to choose the correct mode!';
+$string['notice_maximum_users'] = 'This code server is designed for use by up to 50 students simultaneously. For larger groups, performance may be affected.';

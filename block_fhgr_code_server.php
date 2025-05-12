@@ -49,6 +49,7 @@ class block_fhgr_code_server extends block_base {
             {
                 $additionaltext = "<p><br>" . get_string('mode_mockexam_coding', 'block_fhgr_code_server') . " " . get_string('mode', 'block_fhgr_code_server');
             }
+            $additionaltext = "<p><br>" . get_string('notice_maximum_users', 'block_fhgr_code_server');
         }
 
         if (!$key) {
