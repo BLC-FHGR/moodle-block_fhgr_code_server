@@ -68,11 +68,12 @@ class block_fhgr_code_server extends block_base {
 
         $username = $USER->username;
         $mode = $this->config->mode ?? 'exam';
-        if ($mode === 'exam') {
-            $url = "https://python.fhgr.ch/dispatch/create?t=e&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
-        } else if ($mode === 'mockexam_coding') {
-            $url = "https://python.fhgr.ch/dispatch/create?t=c&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
+        if ($mode === 'mockexam_coding') {
+            $type = 'c';
+        } else {
+            $type = 'e';
         }
+        $url = "https://python.fhgr.ch/dispatch/create?t={$type}&k={$key}&m={$courseid}&u={$userid}&e={$fullname}";
 
         $this->content->text = html_writer::link($url, get_string('open_code_server', 'block_fhgr_code_server'), ['target' => '_blank']) . $additionaltext;
         return $this->content;
