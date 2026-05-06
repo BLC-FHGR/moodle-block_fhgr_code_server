@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_fhgr_code_server';
 $plugin->version = 2026050601;
-$plugin->requires = 2025041700; // Moodle 5.0+
+$plugin->requires = 2025041400; // Moodle 5.0+
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '1.1.0';
