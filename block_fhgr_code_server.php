@@ -61,10 +61,7 @@ class block_fhgr_code_server extends block_base {
         $userid = $USER->id;
         $fullname = fullname($USER);
 
-        $courseid = optional_param('courseid', 0, PARAM_INT);
-        if (!$courseid && isset($COURSE->id)) {
-            $courseid = $COURSE->id;
-        }
+        $courseid = $COURSE->id;
 
         $username = $USER->username;
         $mode = $this->config->mode ?? 'exam';
