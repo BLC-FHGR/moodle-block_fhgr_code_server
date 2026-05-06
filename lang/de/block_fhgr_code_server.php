@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Block FHGR Code Server - Version file
+ * Block FHGR Code Server - German language strings.
  *
  * @package    block_fhgr_code_server
  * @copyright  2025 FHGR Ramon Heeb
