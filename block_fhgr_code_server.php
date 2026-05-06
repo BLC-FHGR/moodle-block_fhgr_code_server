@@ -42,9 +42,7 @@ class block_fhgr_code_server extends block_base {
         if (has_capability('moodle/course:update', $this->context)) {
             // Only lecturers (editing teachers, managers, etc.) will see this
             $mode = $this->config->mode ?? 'exam';
-            if ($mode === 'exam') {
-                $additionaltext = "<p><br>" . get_string('mode_exam', 'block_fhgr_code_server') . " " . get_string('mode', 'block_fhgr_code_server');
-            } else if ($mode === 'mockexam_coding') {
+            if ($mode === 'mockexam_coding') {
                 $additionaltext = "<p><br>" . get_string('mode_mockexam_coding', 'block_fhgr_code_server') . " " . get_string('mode', 'block_fhgr_code_server');
             }
             $additionaltext .= "<p><br>" . get_string('notice_maximum_users', 'block_fhgr_code_server');
